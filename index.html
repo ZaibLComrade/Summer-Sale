@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="./styles/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;400;600;700&display=swap" rel="stylesheet">
 	<title>Summer Sale</title>
 	<style>
 		.font-family {
@@ -33,30 +33,89 @@
 		</section>
 	</header>	
 
-	<main class="grid grid-cols-2">
+	<main class="container flex mx-auto">
 		<!-- Cards -->
-		<section>		
+		<section class="w-full" id="cards-container">		
 			<!-- Kitchenware -->
-			<section>
+			<section class="mt-[120px]">
+				<h2 class="font-semibold text-[40px]">Kitchenware</h2>
+				
+				<!-- Cards Container -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-				<!-- Card 1 -->
-				<div class="px-10 pt-10 shadow-xl card w-96 bg-base-100">
-				  <figure class="px-24 py-8 rounded-lg bg-custom-grey">
-					<img src="./images/prod1.png" alt="Utensil"/>
-				  </figure>
-				  <div class="items-center text-center card-body">
-						<div class="rating">
-						  <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" />
-						  <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" checked />
-						  <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" />
-						  <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" />
-						  <input type="radio" name="rating-2" class="bg-orange-400 mask mask-star-2" />
+					<!-- Card 1 -->
+					<div class="px-10 pt-10 shadow-xl text-custom-black card w-96 bg-base-100">
+					   <div class="px-24 py-8 rounded-lg bg-custom-grey">
+						  <figure class="h-[144px]">
+							<img src="./images/prod1.png" class="w-full h-full" alt="Utensil"/>
+						  </figure>
+					  </div>
+					  <div class="flex flex-col items-center gap-2 card-body">
+							<div class="rating">
+							  <input type="radio" name="rating-1" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-1" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-1" class="bg-custom-yellow mask mask-star-2" checked />
+							  <input type="radio" name="rating-1" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-1" class="bg-custom-yellow mask mask-star-2" />
+							</div>
+						<div>
+							<h2 class="card-title font-semibold text-[20px]">K. Accessories</h2>
 						</div>
-					<h2 class="card-title">K. Accessories</h2>
-					<p><span>39.00</span> TK</p>
-				  </div>
-				</div>
+						<div>
+							<p class="font-normal text-[#11111150] text-[20px]"><span>39.00</span> TK</p>
+						</div>
+					  </div>
+					</div>
 
+					<!-- Card 2 -->
+					<div class="px-10 pt-10 shadow-xl text-custom-black card w-96 bg-base-100">
+					  <div class="px-24 py-8 rounded-lg bg-custom-grey">
+						  <figure class="h-[144px] w-[150px]">
+							<img src="./images/prod2.png" class="w-full h-full" alt="Utensil"/>
+						  </figure>
+					  </div>
+					  <div class="flex flex-col items-center gap-2 card-body">
+							<div class="rating">
+							  <input type="radio" name="rating-4" class="bg-custom-yellow mask mask-star-2" checked />
+							  <input type="radio" name="rating-4" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-4" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-4" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-4" class="bg-custom-yellow mask mask-star-2" />
+							</div>
+						<div>
+							<h2 class="card-title font-semibold text-[20px]">K. Accessories</h2>
+						</div>
+						<div>
+							<p class="font-normal text-[#11111150] text-[20px]"><span>25.00</span> TK</p>
+						</div>
+					  </div>
+					</div>
+
+					<!-- Card 3 -->
+					<div class="px-10 pt-10 shadow-xl text-custom-black card w-96 bg-base-100">
+					  <div class="px-24 py-8 rounded-lg bg-custom-grey">
+						  <figure class="h-[144px] w-[150px]">
+							<img src="./images/prod3.png" class="w-full h-full" alt="Utensil"/>
+						  </figure>
+					  </div>
+					  <div class="flex flex-col items-center gap-2 card-body">
+							<div class="rating">
+							  <input type="radio" name="rating-3" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-3" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-3" class="bg-custom-yellow mask mask-star-2" />
+							  <input type="radio" name="rating-3" class="bg-custom-yellow mask mask-star-2" checked/>
+							  <input type="radio" name="rating-3" class="bg-custom-yellow mask mask-star-2" />
+							</div>
+						<div>
+							<h2 class="card-title font-semibold text-[20px]">Home Cooker</h2>
+						</div>
+						<div>
+							<p class="font-normal text-[#11111150] text-[20px]"><span>49.00</span> TK</p>
+						</div>
+					  </div>
+					</div>
+
+				</div>
 
 			</section>
 		</section>	
