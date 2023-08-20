@@ -10,6 +10,8 @@ const discount = document.getElementById("discount-rate").innerText.split('% ')[
 function addToCart(card) {
 	const name = card.querySelector("h2").innerText;
 	const newEntry = document.createElement("li");
+
+	// Adding New Entries on log
 	newEntry.innerText = name;
 	cartEntry.appendChild(newEntry);
 	document.getElementById("log-hr-line").style.display = "block";
@@ -19,6 +21,7 @@ function addToCart(card) {
 	const totalOutputValue = parseFloat(totalValue) + parseFloat(price);	
 	const off = totalOutputValue * discount / 100;
 
+	// Setting Outputs
 	totalOutput.innerText = totalOutputValue.toFixed(2);
 	discountOutput.innerText = off.toFixed(2);
 	grandTotal.innerText = (totalOutputValue - off).toFixed(2);
