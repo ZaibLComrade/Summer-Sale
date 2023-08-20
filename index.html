@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link rel="stylesheet" href="./styles/style.css"> -->
 	<link rel="stylesheet" href="./styles/style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,39 +14,72 @@
 		}	
 	</style>
 </head>
-<body class="font-family">
+<body class="font-family bg-[#F8F8F8]">
 	<header>
 		<!-- Banner Section -->		
-		<section class="flex items-center justify-center w-full h-[100vh] bg-custom-offWhite">
+		<section class="lg:flex p-10 flex-row-reverse gap-6 items-center justify-center w-full h-full lg:h-[100vh] bg-custom-offWhite">
+			<div class="mx-auto">
+				<img src="./images/summer1.png" class="mx-auto">	
+			</div>
 			<div class="flex flex-col items-center text-custom-black font-custom-black">
-				<h1 class="text-3xl mb-[45px] font-medium uppercase">---Sale Fever---</h1>	
-				<h2 class="text-6xl font-bold text-center w-[700px]">Purchase Tk 200 or above & get <span class="text-custom-pink">20% off</span></h2>
-				<div class="flex mt-[70px] gap-4 items-center text-2xl font-semibold">
+				<h1 class="md:text-2xl lg:text-3xl mb-[45px] font-medium uppercase">---Sale Fever---</h1>	
+				<h2 class="lg:text-6xl md:text-5xl text-4xl font-bold lg:w-[700px] text-center max-w-[700px]">Purchase Tk 200 or above & get <span class="text-custom-pink" id="discount-rate">20% off</span></h2>
+				<div class="flex mt-[70px] gap-4 items-center font-semibold">
 					<p class="text-2xl font-medium">Use Promo Code</p>
 					<div class="px-6 py-[14px] text-white rounded-lg bg-custom-pink w-max">Coupon Code</div>
 				</div>
 			</div>
-			<div>
-				<img src="./images/summer1.png" class="">	
-			</div>
 		</section>
 	</header>	
 
-	<main class="container flex mx-auto">
+	<main class="container flex gap-6 mx-auto mt-[120px] flex-row-reverse">
+
+		<!-- Cart -->
+		<section class="space-y-6 mt-[94px]">
+			<!-- Coupon -->
+			<div class="p-6 bg-white rounded-lg space-y-4">
+				<h3 class="text-xl font-medium text-custom-black">Have Coupon?</h3>
+				<div class="flex border-[1px] rounded-lg">
+					<input type="text" name="coupon" id="coupon-input" class="py-4 border-[1px] w-full pl-4 text-lg block rounded-l-lg" placeholder="Coupon Code">
+					<button type="submit" class="text-white bg-custom-pink px-[22px] text-lg font-semibold py-4 rounded-r-lg">Apply</button>
+				</div>
+			</div>
+
+			<!-- Purchase -->
+			<div class="p-6 text-xl font-medium bg-white rounded-lg">
+				<!-- Log -->
+				<div>
+					<ol id="log-output" class="px-6 list-decimal">
+					</ol>	
+				</div>	
+				<hr id="log-hr-line" class="border-[1px] hidden my-6 w-[96%] mx-auto">
+				<div>
+					<p>Total Price: <span id="total-output">00.00</span>TK</p>	
+					<p>Discount <span id="discount-output">00.00</span>TK</p>	
+					<p>Total: <span id="grand-total-output">00.00</span>TK</p>	
+				</div>
+				<hr class="border-[1px] my-6 w-[96%] mx-auto">
+				<div class="px-6">
+					<button class="w-full py-4 text-lg font-semibold text-white rounded-lg bg-custom-pink">Make Purchase</button>
+				</div>
+			</div>
+		</section>
+
+
 		<!-- Cards -->
 		<section class="w-full" id="cards-container">		
 			<!-- Kitchenware -->
-			<section class="mt-[120px]">
-				<h2 class="font-semibold text-[40px]">Kitchenware</h2>
+			<section>
+				<h2 class="font-semibold text-[40px] mb-8">Kitchenware</h2>
 				
 				<!-- Cards Container -->
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
 					<!-- Card 1 -->
-					<div class="px-10 pt-10 shadow-xl text-custom-black card w-96 bg-base-100">
-					   <div class="px-24 py-8 rounded-lg bg-custom-grey">
+					<div onclick="addToCart(this)" class="px-10 pt-10 shadow-xl text-custom-black card bg-base-100">
+					   <div class="py-8 rounded-lg bg-custom-grey">
 						  <figure class="h-[144px]">
-							<img src="./images/prod1.png" class="w-full h-full" alt="Utensil"/>
+							<img src="./images/prod1.png" class="" alt="Utensil"/>
 						  </figure>
 					  </div>
 					  <div class="flex flex-col items-center gap-2 card-body">
@@ -68,10 +100,10 @@
 					</div>
 
 					<!-- Card 2 -->
-					<div class="px-10 pt-10 shadow-xl text-custom-black card w-96 bg-base-100">
-					  <div class="px-24 py-8 rounded-lg bg-custom-grey">
-						  <figure class="h-[144px] w-[150px]">
-							<img src="./images/prod2.png" class="w-full h-full" alt="Utensil"/>
+					<div onclick="addToCart(this)" class="px-10 pt-10 shadow-xl text-custom-black card bg-base-100">
+					  <div class="py-8 rounded-lg bg-custom-grey">
+						  <figure class="">
+							<img src="./images/prod2.png" class="" alt="Utensil"/>
 						  </figure>
 					  </div>
 					  <div class="flex flex-col items-center gap-2 card-body">
@@ -92,10 +124,10 @@
 					</div>
 
 					<!-- Card 3 -->
-					<div class="px-10 pt-10 shadow-xl text-custom-black card w-96 bg-base-100">
-					  <div class="px-24 py-8 rounded-lg bg-custom-grey">
-						  <figure class="h-[144px] w-[150px]">
-							<img src="./images/prod3.png" class="w-full h-full" alt="Utensil"/>
+					<div onclick="addToCart(this)" class="px-10 pt-10 shadow-xl text-custom-black card bg-base-100">
+					  <div class="py-8 rounded-lg bg-custom-grey">
+						  <figure class="">
+							<img src="./images/prod3.png" class="" alt="Utensil"/>
 						  </figure>
 					  </div>
 					  <div class="flex flex-col items-center gap-2 card-body">
@@ -120,10 +152,6 @@
 			</section>
 		</section>	
 
-		<!-- Cart -->
-		<section>
-			
-		</section>
 	</main>
 
 	<script src="./scripts/main.js"></script>
