@@ -3,13 +3,31 @@ const totalOutput = document.getElementById("total-output");
 const discountOutput = document.getElementById("discount-output");
 const grandTotal = document.getElementById("grand-total-output");
 const cartEntry = document.getElementById("log-output");
-let discountStatus = false;
+const couponInput = document.getElementById("coupon-input");
+const applyBtn = document.getElementById("coupon-apply-btn");
+const purchaseBtn = document.getElementById("make-purchase-btn");
 
-// Getting discount rate
+// Disable buttons by default
+applyBtn.setAttribute("disabled", "");
+purchaseBtn.setAttribute("disabled", "");
+
+// Getting discount values
 const discount = document.getElementById("discount-rate").innerText.split('% ')[0];
+const minDiscountAmount = document.getElementById("discount-amount").innerText.split(' ')[2];
 
 // Getting Coupon Code
 const couponCode = document.getElementById("coupon-code").innerText;
+
+// Apply condition on which buttons are enabled
+function enableButton(currValue, targetValue, btn) {
+	if(currValue >= targetValue) {
+		btn.removeAttribute("disabled");
+		btn.style.backgroundColor = "#E527B2"
+	} else {
+		btn.style.backgroundColor = "#17171760";
+		btn.setAttribute("disabled", "")
+	}
+}
 
 function addToCart(card) {
 	const name = card.querySelector("h2").innerText;
@@ -24,32 +42,25 @@ function addToCart(card) {
 	const price = card.querySelector("span").innerText;
 	totalValue = totalOutput.innerText;
 	const totalOutputValue = parseFloat(totalValue) + parseFloat(price);	
-	let off = 0;
-	if(discountStatus) off = totalOutputValue * discount / 100;
 
 	// Setting Outputs
-	totalOutput.innerText = totalOutputValue.toFixed(2);
-	discountOutput.innerText = off.toFixed(2);
-	grandTotal.innerText = (totalOutputValue - off).toFixed(2);
+	enableButton(totalOutputValue, 1, purchaseBtn);
+	enableButton(totalOutputValue, minDiscountAmount, applyBtn);
+
+	const finalOutputValue = totalOutputValue.toFixed(2);
+	totalOutput.innerText =	finalOutputValue ;
+	grandTotal.innerText = finalOutputValue;
 }
 
-const applyBtn = document.getElementById("coupon-apply-btn");
-const couponInput = document.getElementById("coupon-input");
-
-couponInput.addEventListener("keyup", () => {
-	if(couponInput.value === couponCode) {
-		applyBtn.removeAttribute("disabled");
-		applyBtn.style.backgroundColor = "#E527B2"
-	} else {
-		applyBtn.style.backgroundColor = "#17171760";
-		applyBtn.setAttribute("disabled", "")
-	}
-})
-
 applyBtn.addEventListener("click", () => {
-	discountStatus = true;
-	const total = parseFloat(totalOutput.innerText);
-	const off = total * discount / 100;
-	discountOutput.innerText = off.toFixed(2);
-	grandTotal.innerText = (total - off).toFixed(2);
+	if(couponInput.value === couponCode) {
+		const total = parseFloat(totalOutput.innerText);
+		const off = total * discount / 100;
+		discountOutput.innerText = off.toFixed(2);
+		grandTotal.innerText = (total - off).toFixed(2);
+	} else alert("Invalid Coupon Code");	
 });
+
+purchaseBtn.addEventListener("click", () => {
+
+})
