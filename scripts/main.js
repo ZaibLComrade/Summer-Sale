@@ -6,6 +6,8 @@ const cartEntry = document.getElementById("log-output");
 const couponInput = document.getElementById("coupon-input");
 const applyBtn = document.getElementById("coupon-apply-btn");
 const purchaseBtn = document.getElementById("make-purchase-btn");
+const modalEscapeBtn = document.getElementById("go-home-btn");
+const cartHorizLine = document.getElementById("log-hr-line");
 
 // Disable buttons by default
 applyBtn.setAttribute("disabled", "");
@@ -36,7 +38,7 @@ function addToCart(card) {
 	// Adding New Entries on log
 	newEntry.innerText = name;
 	cartEntry.appendChild(newEntry);
-	document.getElementById("log-hr-line").style.display = "block";
+	cartHorizLine.style.display = "block";
 
 	// Calculating Discount and Total
 	const price = card.querySelector("span").innerText;
@@ -58,9 +60,23 @@ applyBtn.addEventListener("click", () => {
 		const off = total * discount / 100;
 		discountOutput.innerText = off.toFixed(2);
 		grandTotal.innerText = (total - off).toFixed(2);
+		couponInput.value = '';
 	} else alert("Invalid Coupon Code");	
 });
 
-purchaseBtn.addEventListener("click", () => {
+modalEscapeBtn.addEventListener("click", () => {
+	// Clear Log
+	cartEntry.innerHTML = '';
+	cartHorizLine.style.display = "none";
 
+	// Clear price output
+	totalOutput.innerText = "00.00";
+	discountOutput.innerText = "00.00";
+	grandTotal.innerText = "00.00";
+
+	// Disable Buttons
+	applyBtn.setAttribute("disabled", "");
+	purchaseBtn.setAttribute("disabled", "");
+	applyBtn.style.backgroundColor = "#17171760";
+	purchaseBtn.style.backgroundColor = "#17171760";
 })

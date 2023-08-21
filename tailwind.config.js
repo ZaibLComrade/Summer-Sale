@@ -9,6 +9,7 @@ module.exports = {
 			  "custom-offWhite": "#F9F6E2",
 			  "custom-grey": "#1111110d",
 			  "custom-yellow": "#FFC107",
+			  "custom-grey-1": "#11111150",
 			}		
 	  },
   },

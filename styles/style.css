@@ -1609,6 +1609,10 @@ html {
   border-top-right-radius: var(--rounded-box, 1rem);
 }
 
+.m-\[90px\] {
+  margin: 90px;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1617,6 +1621,10 @@ html {
 .my-6 {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .mb-8 {
@@ -1635,8 +1643,16 @@ html {
   margin-top: 70px;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-\[40px\] {
+  margin-bottom: 40px;
+}
+
+.mt-\[40px\] {
+  margin-top: 40px;
 }
 
 .block {
@@ -1742,17 +1758,38 @@ html {
   border-bottom-right-radius: 0.5rem;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-\[1px\] {
   border-width: 1px;
 }
 
-.border-2 {
+.border-\[10px\] {
+  border-width: 10px;
+}
+
+.border-\[4px\] {
+  border-width: 4px;
+}
+
+.border-\[2px\] {
   border-width: 2px;
+}
+
+.border-\[3px\] {
+  border-width: 3px;
 }
 
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-custom-pink {
+  --tw-border-opacity: 1;
+  border-color: rgb(229 39 178 / var(--tw-border-opacity));
 }
 
 .bg-\[\#17171760\] {
@@ -1805,6 +1842,10 @@ html {
   padding: 90px;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1835,6 +1876,11 @@ html {
   padding-bottom: 14px;
 }
 
+.px-11 {
+  padding-left: 2.75rem;
+  padding-right: 2.75rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
 }
@@ -1850,6 +1896,11 @@ html {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-\[20px\] {
@@ -1870,9 +1921,14 @@ html {
   line-height: 1.75rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .font-bold {
@@ -1904,6 +1960,10 @@ html {
   color: rgb(17 17 17 / var(--tw-text-opacity));
 }
 
+.text-custom-grey {
+  color: #1111110d;
+}
+
 .text-custom-pink {
   --tw-text-opacity: 1;
   color: rgb(229 39 178 / var(--tw-text-opacity));
@@ -1914,14 +1974,24 @@ html {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-custom-grey {
-  color: #1111110d;
+.text-custom-grey-1 {
+  color: #11111150;
 }
 
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:text-custom-pink:hover {
+  --tw-text-opacity: 1;
+  color: rgb(229 39 178 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-2xl:hover {
