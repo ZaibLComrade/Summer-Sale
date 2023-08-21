@@ -1613,6 +1613,10 @@ html {
   margin: 90px;
 }
 
+.m-14 {
+  margin: 3.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -1653,6 +1657,14 @@ html {
 
 .mt-\[40px\] {
   margin-top: 40px;
+}
+
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
+.mt-\[56px\] {
+  margin-top: 56px;
 }
 
 .block {
